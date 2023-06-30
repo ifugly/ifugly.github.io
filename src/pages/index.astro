@@ -1,17 +1,30 @@
 ---
-import Hitokoto from "./hitokoto.astro";
+import Hitokoto from "./hitokoto.jsx";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Hitokoto client:load />
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      .bg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url(https://source.unsplash.com/random);
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <Hitokoto client:load />
+    <h1>Astro</h1>
+  </body>
 </html>
