@@ -1,5 +1,6 @@
 ---
-import Hitokoto from "./hitokoto.jsx";
+import Hitokoto from "./index/hitokoto.jsx";
+import Unsplash from "./index/unsplash.jsx";
 ---
 
 <html lang="en">
@@ -24,6 +25,7 @@ import Hitokoto from "./hitokoto.jsx";
     </style>
   </head>
   <body class="bg">
+    <Unsplash client:load />
     <Hitokoto client:load />
     <h1>Astro</h1>
   </body>
