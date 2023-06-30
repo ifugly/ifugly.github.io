@@ -1,4 +1,5 @@
 ---
+import Hitokoto from "./hitokoto.astro";
 ---
 
 <html lang="en">
@@ -10,11 +11,7 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<span id="jinrishici-sentence">......</span>
-		<script
-			src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
-			charset="utf-8"></script>
-
+		<Hitokoto client:load />
 		<h1>Astro</h1>
 	</body>
 </html>

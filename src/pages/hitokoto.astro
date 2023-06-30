@@ -1,0 +1,18 @@
+---
+const hitokotoFetch = fetch("https://v1.hitokoto.cn/"); // 一言api
+let hitokoto = {
+	text: "......",
+	from: "",
+	fromWho: "",
+}; // 获取一言和来源
+hitokotoFetch
+	.then((response) => response.json())
+	.then((data) => {
+		hitokoto.text = data.hitokoto;
+		hitokoto.from = data.from;
+		hitokoto.fromWho = data.from_who;
+		console.log(hitokoto);
+	});
+---
+
+<p>{hitokoto.text}</p>
