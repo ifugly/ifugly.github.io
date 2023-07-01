@@ -1,25 +1,31 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function GetHitokoto() {
-  const hitokotoFetch = fetch("https://v1.hitokoto.cn/"); // 一言api
   const [hitokoto, setHitokoto] = useState({
     text: "......",
     from: "",
     fromWho: "",
-  }); // 获取一言和来源
-  hitokoto.text == "......" &&
-    hitokotoFetch
+  }); // 一言和来源
+
+  useEffect(() => {
+    let multiHitokotoFetch = false // 防止重放
+    fetch("https://v1.hitokoto.cn/")
       .then((response) => response.json())
       .then((data) => {
-        setHitokoto({
-          ...hitokoto,
-          text: data.hitokoto,
-          from: data.from ? data.from : "",
-          fromWho: data.from_who ? data.from_who : "",
-        });
+        if (!multiHitokotoFetch) {
+          setHitokoto({
+            ...hitokoto,
+            text: data.hitokoto,
+            from: data.from ? data.from : "",
+            fromWho: data.from_who ? data.from_who : "",
+          });
+        }
       }); // avoid setState loop
-	//   gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ
-	//   s0cmeGao2qfOlWP6lxS1sWG0tkQuWYaVLFSKw2xZdcM
+    return () => {
+      multiHitokotoFetch = true;
+    }
+  }, [])
+
   return (
     <div>
       <h1>{hitokoto.text}</h1>
