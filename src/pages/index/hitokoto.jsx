@@ -8,11 +8,11 @@ export default function GetHitokoto() {
   }); // 一言和来源
 
   useEffect(() => {
-    let multiHitokotoFetch = false // 防止重放
+    let hitokotoCancelled = false // 防止重放
     fetch("https://v1.hitokoto.cn/")
       .then((response) => response.json())
       .then((data) => {
-        if (!multiHitokotoFetch) {
+        if (!hitokotoCancelled) {
           setHitokoto({
             ...hitokoto,
             text: data.hitokoto,
@@ -22,7 +22,7 @@ export default function GetHitokoto() {
         }
       }); // avoid setState loop
     return () => {
-      multiHitokotoFetch = true;
+      hitokotoCancelled = true;
     }
   }, [])
 
