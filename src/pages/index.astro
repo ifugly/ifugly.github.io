@@ -14,12 +14,21 @@ import Unsplash from "./index/unsplash.jsx";
       body {
         padding: 0;
         margin: 0;
-        min-height: 100vh;
+        height: 100vh;
+        background-color: #6c6c6e;
+      }
+      .wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
       }
     </style>
   </head>
   <body>
-    <Unsplash client:load />
+    <div class="wrap">
+      <Unsplash client:load />
+    </div>
     <Hitokoto client:load />
     <h1>Astro</h1>
   </body>

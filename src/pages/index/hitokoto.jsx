@@ -28,8 +28,8 @@ export default function GetHitokoto() {
 
   return (
     <div>
-      <h1>{hitokoto.text}</h1>
-      <h3>{`「${hitokoto.from}」${hitokoto.fromWho}`}</h3>
+      <div>{hitokoto.text}</div>
+      <div>{`「${hitokoto.from}」${hitokoto.fromWho}`}</div>
     </div>
   );
 }
