@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function GetUrl() {
-    const [url, setUrl] = useState('url()'); // unsplash图片地址
+    const [url, setUrl] = useState(''); // unsplash图片地址
 
     useEffect(() => {
         let urlCancelled = false // 防止重放
@@ -9,7 +9,7 @@ export default function GetUrl() {
             .then((response) => response.json())
             .then((data) => {
                 if (!urlCancelled) {
-                    setUrl(`url(${data.urls.raw})`);
+                    setUrl(data.urls.raw);
                 }
             }); // avoid setState loop
         return () => {
@@ -18,8 +18,7 @@ export default function GetUrl() {
     }, [])
 
     return (
-        <div style={{ backgroundImage: url }}>
-            {url}
+        <div style={{ backgroundImage: `url(${url})` }}>
         </div>
     );
 }
