@@ -8,7 +8,7 @@ export default function GetHitokoto() {
   }); // 一言和来源
 
   useEffect(() => {
-    let hitokotoCancelled = false // 防止重放
+    let hitokotoCancelled = false; // 防止重放
     fetch("https://v1.hitokoto.cn/")
       .then((response) => response.json())
       .then((data) => {
@@ -23,13 +23,29 @@ export default function GetHitokoto() {
       }); // avoid setState loop
     return () => {
       hitokotoCancelled = true;
-    }
-  }, [])
+    };
+  }, []);
 
   return (
-    <div>
-      <div>{hitokoto.text}</div>
-      <div>{`「${hitokoto.from}」${hitokoto.fromWho}`}</div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          fontSize: "32px",
+          fontWeight: "bold",
+          marginBottom: "20px",
+        }}
+      >
+        {hitokoto.text}
+      </div>
+      <div style={{ fontSize: "18px" }}>
+        {`「${hitokoto.from}」${hitokoto.fromWho}`}
+      </div>
     </div>
   );
 }

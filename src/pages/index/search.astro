@@ -14,11 +14,16 @@ import Unsplash from "../index/unsplash.jsx";
     <div class="input">
         <input type="text" />
     </div>
+    <div class="btns">
+        <div class="bing"></div>
+        <div class="google"></div>
+        <div class="baidu"></div>
+    </div>
 </div>
+<script></script>
 <style>
     .wrap {
-        width: 50%;
-        border-radius: 24px;
+        width: 100%;
         color: white;
         box-sizing: border-box;
         position: relative;
@@ -34,17 +39,41 @@ import Unsplash from "../index/unsplash.jsx";
     .unsplash-cover {
         background-color: rgba(0, 0, 0, 0.2);
     }
-    .input,
     .hitokoto {
         padding: 24px;
     }
+    .btns,
+    .input {
+        margin: 0 auto 24px;
+        width: 70%;
+        max-width: 500px;
+    }
     input {
-        padding: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px 24px;
         background-color: blue;
-        color: green;
+        border-radius: 50px;
+        color: red;
         border: none;
+        font-size: 20px;
     }
     input:focus-visible {
         outline: none;
+    }
+    .btns {
+        width: 70%;
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .bing,
+    .google,
+    .baidu {
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.2);
     }
 </style>
