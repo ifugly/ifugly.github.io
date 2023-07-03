@@ -1,6 +1,5 @@
 ---
-import Hitokoto from "./index/hitokoto.jsx";
-import Unsplash from "./index/unsplash.jsx";
+import Search from "./index/search.astro";
 ---
 
 <html lang="en">
@@ -17,19 +16,10 @@ import Unsplash from "./index/unsplash.jsx";
         height: 100vh;
         background-color: #6c6c6e;
       }
-      .wrap {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <Unsplash client:load />
-    </div>
-    <Hitokoto client:load />
+    <Search />
     <h1>Astro</h1>
   </body>
 </html>
