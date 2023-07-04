@@ -13,9 +13,9 @@ import Hitokoto from "../index/hitokoto.jsx";
             <input type="text" />
         </div>
         <div class="btns">
-            <div class="bing"></div>
-            <div class="google"></div>
-            <div class="baidu"></div>
+            <div class="bing">Bing</div>
+            <div class="google">Google</div>
+            <div class="baidu">Baidu</div>
         </div>
     </div>
 </div>
@@ -88,9 +88,6 @@ fetch(
         outline: none;
     }
     .btns {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-top: 20px;
         margin-bottom: 60px;
     }
@@ -98,8 +95,12 @@ fetch(
     .google,
     .baidu {
         padding: 8px 16px;
-        background-color: rgba(0, 0, 0, 0.2);
-        color: white;
-        font-size: ;
+        width: 80px;
+        backdrop-filter: blur(12px) brightness(0.8);
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
     }
 </style>
