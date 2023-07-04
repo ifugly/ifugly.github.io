@@ -1,32 +1,58 @@
 ---
 import Hitokoto from "../index/hitokoto.jsx";
-import Unsplash from "../index/unsplash.jsx";
 ---
 
 <div class="wrap">
-    <div class="unsplash">
-        <Unsplash client:load />
-    </div>
-    <div class="unsplash-cover"></div>
     <div class="hitokoto">
         <Hitokoto client:load />
     </div>
-    <div class="input">
-        <input type="text" />
-    </div>
-    <div class="btns">
-        <div class="bing"></div>
-        <div class="google"></div>
-        <div class="baidu"></div>
+    <div class="content">
+        <div id="unsplash" class="unsplash"></div>
+        <div class="unsplash-cover"></div>
+        <div class="input">
+            <input type="text" />
+        </div>
+        <div class="btns">
+            <div class="bing"></div>
+            <div class="google"></div>
+            <div class="baidu"></div>
+        </div>
     </div>
 </div>
-<script></script>
+<script is:inline>
+// 获取背景图
+fetch(
+    "https://api.unsplash.com/photos/random/?collections=317099&orientation=landscape&client_id=gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ"
+)
+    .then((response) => response.json())
+    .then((data) => {
+        document.getElementById("unsplash").style.backgroundImage =
+            "url(https://images.unsplash.com/photo-1499929485660-2eb52b7bd440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njg5Njl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg0NzE0NDB8&ixlib=rb-4.0.3&q=80&w=1080)";
+        // document.getElementById(
+        //     "unsplash"
+        // ).style.backgroundImage = `url(${data.urls.regular})`;
+    });
+</script>
 <style>
+    :root {
+        --text-input: 20px;
+        --text-hitokoto: 32px;
+        --text-author: 20px;
+    }
+    * {
+        box-sizing: border-box;
+    }
     .wrap {
         width: 100%;
-        color: white;
-        box-sizing: border-box;
+    }
+    .hitokoto {
+        padding: 60px 48px;
+    }
+    .content {
         position: relative;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 36px;
         overflow: hidden;
     }
     .unsplash,
@@ -37,43 +63,43 @@ import Unsplash from "../index/unsplash.jsx";
         z-index: -1;
     }
     .unsplash-cover {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-    .hitokoto {
-        padding: 24px;
+        backdrop-filter: brightness(0.8);
     }
     .btns,
     .input {
-        margin: 0 auto 24px;
+        margin: 0 auto;
         width: 70%;
         max-width: 500px;
     }
+    .input {
+        margin-top: 60px;
+        margin-top: 60px;
+    }
     input {
         width: 100%;
-        box-sizing: border-box;
         padding: 16px 24px;
         background-color: blue;
         border-radius: 50px;
         color: red;
         border: none;
-        font-size: 20px;
+        font-size: var(--text-input);
     }
     input:focus-visible {
         outline: none;
     }
     .btns {
-        width: 70%;
-        max-width: 500px;
-        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 20px;
+        margin-bottom: 60px;
     }
     .bing,
     .google,
     .baidu {
-        width: 44px;
-        height: 44px;
+        padding: 8px 16px;
         background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+        font-size: ;
     }
 </style>

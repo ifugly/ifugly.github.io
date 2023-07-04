@@ -36,14 +36,14 @@ export default function GetHitokoto() {
     >
       <div
         style={{
-          fontSize: "32px",
+          fontSize: "var(--text-hitokoto)",
           fontWeight: "bold",
           marginBottom: "20px",
         }}
       >
         {hitokoto.text}
       </div>
-      <div style={{ fontSize: "18px" }}>
+      <div style={{ fontSize: "var(--text-author)" }}>
         {`「${hitokoto.from}」${hitokoto.fromWho}`}
       </div>
     </div>
