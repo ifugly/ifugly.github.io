@@ -9,35 +9,38 @@ import Hitokoto from "../index/hitokoto.jsx";
     <div class="content">
         <div id="unsplash" class="unsplash"></div>
         <div class="unsplash-cover"></div>
-        <div class="input">
-            <input type="text" />
-        </div>
-        <div class="btns">
-            <div class="bing">Bing</div>
-            <div class="google">Google</div>
-            <div class="baidu">Baidu</div>
+        <div class="operator">
+            <div class="input">
+                <input type="text" />
+            </div>
+            <div class="btns">
+                <div class="bing">Bing</div>
+                <div class="google">Google</div>
+                <div class="baidu">Baidu</div>
+            </div>
         </div>
     </div>
 </div>
 <script is:inline>
 // 获取背景图
-fetch(
-    "https://api.unsplash.com/photos/random/?collections=317099&orientation=landscape&client_id=gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ"
-)
-    .then((response) => response.json())
-    .then((data) => {
-        document.getElementById("unsplash").style.backgroundImage =
-            "url(https://images.unsplash.com/photo-1499929485660-2eb52b7bd440?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0Njg5Njl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODg0NzE0NDB8&ixlib=rb-4.0.3&q=80&w=1080)";
-        // document.getElementById(
-        //     "unsplash"
-        // ).style.backgroundImage = `url(${data.urls.regular})`;
-    });
+// fetch(
+//     "https://api.unsplash.com/photos/random/?collections=317099&orientation=landscape&client_id=gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ"
+// )
+//     .then((response) => response.json())
+//     .then((data) => {
+document.getElementById("unsplash").style.backgroundImage =
+    "url(https://images.unsplash.com/photo-1688506706968-d0780d1eec4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60)";
+    // document.getElementById(
+    //     "unsplash"
+    // ).style.backgroundImage = `url(${data.urls.regular})`;
+    // });
 </script>
 <style>
     :root {
         --text-input: 20px;
         --text-hitokoto: 32px;
         --text-author: 20px;
+        --color-btns: white;
     }
     * {
         box-sizing: border-box;
@@ -62,18 +65,20 @@ fetch(
         height: 100%;
         z-index: -1;
     }
+    .unsplash {
+        background-size: cover;
+    }
     .unsplash-cover {
         backdrop-filter: brightness(0.8);
+    }
+    .operator {
+        width: 100%;
     }
     .btns,
     .input {
         margin: 0 auto;
         width: 70%;
         max-width: 500px;
-    }
-    .input {
-        margin-top: 60px;
-        margin-top: 60px;
     }
     input {
         width: 100%;
@@ -88,8 +93,7 @@ fetch(
         outline: none;
     }
     .btns {
-        margin-top: 20px;
-        margin-bottom: 60px;
+        color: var(--color-btns);
     }
     .bing,
     .google,
@@ -97,10 +101,39 @@ fetch(
         padding: 8px 16px;
         width: 80px;
         backdrop-filter: blur(12px) brightness(0.8);
-        margin: 20px auto;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 8px;
+        margin: 0 auto;
+    }
+    .bing,
+    .google {
+        margin: 20px auto;
+    }
+    @media (max-width: 479px) {
+        .content {
+            width: 100%;
+            border-radius: 0;
+        }
+        .operator {
+            margin: 60px 0 40px;
+        }
+    }
+    @media (min-width: 480px) {
+        .content {
+            height: 445px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    @media (min-width: 768px) {
+        .content {
+            height: 545px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 </style>
