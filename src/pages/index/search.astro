@@ -107,18 +107,16 @@ const open = (to) => {
 // });
 
 // 获取背景图
-// fetch(
-//     "https://api.unsplash.com/photos/random/?collections=317099&orientation=landscape&client_id=gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ"
-// )
-//     .then((response) => response.json())
-//     .then((data) => {
-        // document.getElementById(
-        //     "unsplash"
-        // ).style.backgroundImage = `url(${data.urls.regular})`;
+fetch(
+    "https://api.unsplash.com/photos/random/?collections=317099&orientation=landscape&client_id=gtJVuXhWYnhx1JZjQnjRiGvvd0pWMdKEtcGSjvoJ3UQ"
+)
+    .then((response) => response.json())
+    .then((data) => {
         document.getElementById(
             "unsplash"
-        ).style.backgroundImage = 'url(https://api.cyrilstudio.top/bing/image.php/bing?rand=true)';
-    // });
+        ).style.backgroundImage = `url(${data.urls.regular})`;
+        // https://api.cyrilstudio.top/bing/image.php/bing?rand=true
+    });
 </script>
 <style>
     :root {
