@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ios-template.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1.0.0</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>EFB49E569BB3854E4E3E3D497650DAAABEBBBC39</string>
+				<key>dateExpires</key>
+				<string>2024/6/20</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>arm64</string>
+					</array>
+					<key>buildNumber</key>
+					<string>3</string>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>EFB49E569BB3854E4E3E3D497650DAAABEBBBC39</string>
+						<key>dateExpires</key>
+						<string>2024/6/20</string>
+						<key>type</key>
+						<string>iOS Distribution</string>
+					</dict>
+					<key>name</key>
+					<string>AmarsoftSDK.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>27267QZ2CD</string>
+						<key>name</key>
+						<string>Shanghai Amarsoft Information &amp; Technology Co., Ltd</string>
+					</dict>
+					<key>versionNumber</key>
+					<string>1.5.0</string>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>27267QZ2CD.com.amarsoft.mobile.pls</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>27267QZ2CD</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>ios-template.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>8853ba63-e056-4128-a9ce-58476e8e1b76</string>
+				<key>dateExpires</key>
+				<string>2024/2/8</string>
+				<key>name</key>
+				<string>amep</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>27267QZ2CD</string>
+				<key>name</key>
+				<string>Shanghai Amarsoft Information &amp; Technology Co., Ltd</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
