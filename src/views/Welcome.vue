@@ -52,10 +52,10 @@
 </template>
 <script setup>
 import router from "@/router";
-import { ref, inject } from "vue";
+import { ref } from "vue";
+import * as AV from "leancloud-storage";
 
 localStorage.removeItem("phone");
-const AV = inject("$AV");
 const query = new AV.Query("Users");
 
 const phone = ref("");

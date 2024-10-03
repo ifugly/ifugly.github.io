@@ -93,7 +93,8 @@ button:hover {
 
 <script setup>
 import router from "@/router";
-import { inject, ref } from "vue";
+import { ref } from "vue";
+import * as AV from "leancloud-storage";
 
 const phone = localStorage.getItem("phone");
 !phone && router.replace("/");
@@ -101,7 +102,6 @@ const phone = localStorage.getItem("phone");
 let currentUser;
 let sns;
 let tasks;
-const AV = inject("$AV");
 const queryUser = new AV.Query("Users");
 queryUser.equalTo("phone", phone);
 queryUser.find().then((res) => {
