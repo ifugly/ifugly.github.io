@@ -1,20 +1,20 @@
 {
-  "name": "blog-astro",
+  "name": "draw",
+  "version": "0.0.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/react": "^2.2.1",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "astro": "^2.6.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "leancloud-storage": "^4.15.2",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.3.1"
   }
 }
